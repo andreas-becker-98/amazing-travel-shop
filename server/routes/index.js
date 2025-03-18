@@ -1,5 +1,7 @@
 const router = require("express").Router();
 
+const productRoutes = require("./product");
+
 const User = require('../models/user');
 const { checkPassword, signToken } = require('../utils/auth');
 
@@ -34,5 +36,7 @@ router.get("/api/auth", async (req, res) => {
 
     res.json({token: signToken(userData.dataValues) });
 });
+
+router.use("/api/products", productRoutes);
 
 module.exports = router;
