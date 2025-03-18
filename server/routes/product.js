@@ -14,9 +14,7 @@ app.get('/', async (_, res) => {
             }
         ],
     });
-
-    console.log(products);
-
+    
     products.forEach((prod) => {
 
         data.push({
