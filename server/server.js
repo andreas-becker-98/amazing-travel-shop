@@ -5,6 +5,10 @@ const sequelize = require('./config/connection');
 // Configuration Data
 const PORT = process.env.PORT || 3001;
 
+// Include routes
+const routes = require('./routes');
+app.use(routes);
+
 // Set up server
 const app = express();
 app.use(express.json());
