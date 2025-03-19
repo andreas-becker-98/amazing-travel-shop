@@ -9,6 +9,8 @@ import Accessories from "./pages/Accessories";
 import MyAccount from "./pages/MyAccount";  
 import Favourite from "./pages/Favourite";
 import Cart from "./pages/Cart";
+import Backpacks from "./categories/Backpack";
+import Jackets from "./categories/Jackets";
 import '@fortawesome/fontawesome-svg-core/styles.css';  
 
 
@@ -19,6 +21,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/menpage" element={<Menpage />} />
+        <Route path="/backpacks" element={<Backpacks />} />
+        <Route path="/jackets" element={<Jackets />} />
         <Route path="/womenpage" element={<Womenpage />} />
         <Route path="/accessories" element={<Accessories />} />
         <Route path="/myaccount" element={<MyAccount />} />
