@@ -1,6 +1,7 @@
 const app = require('express').Router();
 
 const { Product, ProductDetails, Category } = require('../models');
+const { productToPayload } = require('../models/conversions');
 
 app.get('/', async (_, res) => {
     const data = [];
@@ -14,26 +15,38 @@ app.get('/', async (_, res) => {
             }
         ],
     });
-    
-    products.forEach((prod) => {
 
-        data.push({
-            id: prod.id,
-            price: {
-                "gbp": prod.price_gbp,
-                "eur": Number((prod.price_gbp * 1.19).toFixed(2)),
+    if(products)
+        data.push(...products.map(productToPayload));
+
+    res.json(data);
+});
+
+app.get('/:id', async (req, res) => {
+    const id = Number.parseInt(req.params.id);
+
+    if(Number.isNaN(id)) {
+        res.sendStatus(400);
+        return;
+    }
+
+    const product = await Product.findByPk(id, {
+        include: [
+            {
+                model: Category
             },
-            discount: prod.discount,
-            category: { ...prod.Category.dataValues },
-            details: prod.ProductDetails.map((prodDetail) => {
-                return {
-                    lang: prodDetail.lang,
-                    name: prodDetail.name,
-                    description: prodDetail.description,
-                };
-            }),
-        });
+            {
+                model: ProductDetails
+            }
+        ],
     });
+
+    if(!product) {
+        res.sendStatus(404);
+        return;
+    }
+    
+    const data = productToPayload(product);
 
     res.json(data);
 });
