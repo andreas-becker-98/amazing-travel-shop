@@ -1,6 +1,7 @@
+// Example for Homepage.jsx
 import React from "react";
 
-const Accessories = () => {
+const Backpacks = () => {
   return (
     <div>
       <h1>Homepage</h1>
@@ -8,4 +9,4 @@ const Accessories = () => {
   );
 };
 
-export default Accessories;
+export default Backpacks;
