@@ -1,14 +1,20 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping, faHeart, faUser } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCartShopping,
+  faHeart,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <Link to="/" className="logo">Amazing Travel Shop</Link>
+        <Link to="/" className="logo">
+          Amazing Travel Shop
+        </Link>
       </div>
       <div className="navbar-center">
         <ul className="nav-links">
@@ -19,8 +25,12 @@ const Navbar = () => {
               <Link to="/backpacks">Backpacks</Link>
             </div>
           </li>
-          <li><Link to="/womenpage">Women's</Link></li>
-          <li><Link to="/accessories">Accessories</Link></li>
+          <li>
+            <Link to="/womenpage">Women's</Link>
+          </li>
+          <li>
+            <Link to="/accessories">Accessories</Link>
+          </li>
         </ul>
       </div>
       <div className="navbar-right">
@@ -28,7 +38,7 @@ const Navbar = () => {
         <Link to="/myaccount" className="user-icon">
           <FontAwesomeIcon icon={faUser} />
         </Link>
-        
+
         {/* Favourite Icon */}
         <Link to="/favourite" className="fav-icon">
           <FontAwesomeIcon icon={faHeart} />

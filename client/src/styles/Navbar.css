@@ -46,17 +46,6 @@
   position: relative;
 }
 
-.navbar-right .cart-count {
-  background-color: #f44336;
-  color: #fff;
-  border-radius: 50%;
-  padding: 0.2rem 0.5rem;
-  font-size: 0.8rem;
-  position: absolute;
-  top: -0.5rem;
-  right: -0.5rem;
-}
-
 /* Dropdown Styles */
 .dropdown {
   position: relative;
@@ -88,7 +77,7 @@
   display: block;
 }
 
-.dropdown>a {
+.dropdown > a {
   padding: 0;
   display: block;
   background-color: #333;
