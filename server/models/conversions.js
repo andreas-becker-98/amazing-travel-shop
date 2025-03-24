@@ -15,6 +15,7 @@ const productToPayload = (product) => {
                 description: prodDetail.description,
             };
         }),
+        image_url: product.picture_url,
     };
 };
 

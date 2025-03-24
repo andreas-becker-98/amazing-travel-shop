@@ -18,6 +18,9 @@ Product.init(
         discount: {
             type: DataTypes.FLOAT,
         },
+        picture_url: {
+            type: DataTypes.STRING,
+        }
     },
     {
         sequelize,
