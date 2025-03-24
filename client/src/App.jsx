@@ -3,12 +3,10 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  useLocation,
 } from "react-router-dom";
 import { CartProvider } from "./contexts/CartContext";
 import Product from "./pages/Product";
 import Cart from "./pages/Cart";
-import CartSummary from "./components/CartSummary";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Homepage from "./pages/Homepage";
@@ -44,15 +42,5 @@ function App() {
     </CartProvider>
   );
 }
-
-const CartSummaryWithVisibility = () => {
-  const location = useLocation();
-
-  if (location.pathname === "/") {
-    return null;
-  }
-
-  return <CartSummary />;
-};
 
 export default App;
