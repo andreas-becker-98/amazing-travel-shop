@@ -27,7 +27,6 @@ function App() {
     <CartProvider>
       <Router>
         <Header />
-        <CartSummaryWithVisibility /> {/* Move this outside of Routes */}
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/product/:id" element={<Product />} />
