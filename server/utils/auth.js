@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 const secret = 'AwesomeTravelShop%feanfeah283841vr9qhudb289qhdq8jnd82vq';
-const expiration = '8d';
+const expiration = '3d';
 
 const hashPassword = (password) => {
     return bcrypt.hashSync(password, saltRounds);
