@@ -47,9 +47,12 @@ export function CartProvider({ children }) {
     }));
   };
 
-  // Calculate the total price for the respective category
-  const calculateTotal = (category) => {
-    return cart[category]
+  const clearCart = () => {
+    setCart(() => []);
+  }
+
+  const calculateTotal = () => {
+    return cart
       .reduce((total, item) => total + item.price * item.quantity, 0)
       .toFixed(2);
   };
@@ -62,6 +65,7 @@ export function CartProvider({ children }) {
         updateQuantity,
         calculateTotal,
       }}
+      value={{ cart, addToCart, updateQuantity, calculateTotal, clearCart }}
     >
       {children}
     </CartContext.Provider>

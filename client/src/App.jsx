@@ -1,9 +1,12 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+} from "react-router-dom";
 import { CartProvider } from "./contexts/CartContext";
 import Product from "./pages/Product";
 import Cart from "./pages/Cart";
-import CartSummary from "./components/CartSummary";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Homepage from "./pages/Homepage";
@@ -35,7 +38,6 @@ function App() {
     <CartProvider>
       <Router>
         <Header />
-        <CartSummaryWithVisibility />
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/product/:category/:id" element={<Product />} />
