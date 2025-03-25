@@ -1,17 +1,17 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useSession } from "../contexts/SessionContext";
 
 const Header = () => {
   const navigate = useNavigate();
-  const token = localStorage.getItem('authToken');
+  const token = localStorage.getItem('authToken');  
 
-  const { user } = useSession();
+  const { user } = useSession();  
   
   const handleLogout = () => {
-    localStorage.removeItem('authToken');
-    navigate('./login');
+    localStorage.removeItem('authToken');  
+    navigate('/');  
   };
 
   const wordCase = (word) => {  
@@ -19,22 +19,21 @@ const Header = () => {
       return '';
     }
     return word.charAt(0).toUpperCase() + word.slice(1);
-  }
+  };
 
   return (
     <div>
-      <Navbar />
-      <Link to="/">Home</Link>
-        {token ? (
-          <>
-            <Link to="/profile">{wordCase(user.username)}'s Courses</Link>
-            <button onClick={handleLogout}>Logout</button>
-          </>
-        ) : (
-          <>
-            <Link to="/login">Login</Link>
-          </>
-        )}
+      <Navbar />  
+      
+      {token && user ? (  
+        <div>
+          <p>Welcome, {wordCase(user.username)}!</p>
+          <button onClick={handleLogout}>Logout</button>
+        </div>
+      ) : (
+        <div>
+        </div>
+      )}
     </div>
   );
 };

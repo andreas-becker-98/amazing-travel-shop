@@ -30,6 +30,19 @@ const post = (url, params) => {
         return Promise.reject(new Error("Invalid credentials"));
       }
 
+      case "/api/signup":
+
+       
+        return Promise.resolve({
+          data: {
+            id: 1,
+            username: "admin",  
+            email: params.email,
+            token: "mockToken",  
+          },
+        });
+     
+
     default:
       return Promise.reject(new Error("Invalid endpoint"));
   }
