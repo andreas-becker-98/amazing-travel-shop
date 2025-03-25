@@ -16,21 +16,10 @@ import Backpacks from "./categories/Backpacks";
 import Jackets from "./categories/Jackets"; 
 import TrailVests from "./categories/TrailVests";
 import MyAccount from "./pages/MyAccount";
+import SignUp from "./pages/Signup";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "./App.css";
 import { SessionProvider } from "./contexts/SessionContext";
-
-
-const CartSummaryWithVisibility = () => {
-  const location = useLocation();
-
-
-  if (location.pathname === "/" || location.pathname === "/myaccount" || location.pathname === "/login") {
-    return null;
-  }
-
-  return <CartSummary />;
-};
 
 function App() {
   return (
@@ -44,6 +33,7 @@ function App() {
           <Route path="/menpage" element={<Menpage />} /> 
           <Route path="/womenpage" element={<Womenpage />} />
           <Route path="/myaccount" element={<MyAccount />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/backpacks/:category" element={<Backpacks />} />
           <Route path="/jackets/:category" element={<Jackets />} /> 

@@ -1,36 +1,41 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useSession } from "../contexts/SessionContext"; 
 import axios from "../mock/api"; 
+import { useSession } from "../contexts/SessionContext";
 
-const defaultUser = {
-  email: 'admin@amazingtravelshop',
-  password: 'Hiking123!',
-};
-
-const MyAccount = () => {
-  const [email, setEmail] = useState(defaultUser.email);
-  const [password, setPassword] = useState(defaultUser.password);
+const SignUp = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
-  const { setUser } = useSession(); 
+  const { setUser } = useSession();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+   
+    if (password !== confirmPassword) {
+      alert("Passwords do not match");
+      return;
+    }
+
     try {
-      const response = await axios.post('/api/login', { email, password });
+      const response = await axios.post('/api/signup', { email, password });
       const data = response.data;
-
-      localStorage.setItem('user', JSON.stringify(data)); 
-      localStorage.setItem('authToken', data.token); 
-
+      console.log(data)
+      
       setUser({
         username: data.username,
         id: data.id,
       });
+      localStorage.setItem('user', JSON.stringify(data));
+      localStorage.setItem('authToken', data.token);
 
+     
       navigate('/');
     } catch (error) {
-      console.error('Login failed', error);
+      console.error('Signup failed', error);
+      alert("Signup failed, please try again.");
     }
   };
 
@@ -40,7 +45,6 @@ const MyAccount = () => {
     flexDirection: 'column',
     alignItems: 'center',
     maxWidth: '400px',
-    height: '280px',
     margin: '50px auto',
     padding: '20px',
     borderRadius: '8px',
@@ -64,21 +68,11 @@ const MyAccount = () => {
     border: '2px solid black',
     borderRadius: '4px',
     cursor: 'pointer',
-    marginBottom: '10px',  // Space between buttons
-  };
-
-  const signUpButtonStyles = {
-    padding: '10px 20px',
-    backgroundColor: '#28a745', // Green color for sign up
-    color: 'white',
-    border: '2px solid black',
-    borderRadius: '4px',
-    cursor: 'pointer',
   };
 
   return (
     <form onSubmit={handleSubmit} style={formStyles}>
-      <h2>My Account</h2>
+      <h2>Sign Up</h2>
       <input
         type="text"
         placeholder="Email"
@@ -95,16 +89,17 @@ const MyAccount = () => {
         required
         style={inputStyles}
       />
-      <button type="submit" style={buttonStyles}>Login</button>
-      {/* Sign Up Button */}
-      <button 
-        type="button" 
-        onClick={() => navigate('/signup')} 
-        style={signUpButtonStyles}>
-        Sign Up
-      </button>
+      <input
+        type="password"
+        placeholder="Confirm Password"
+        value={confirmPassword}
+        onChange={(e) => setConfirmPassword(e.target.value)}
+        required
+        style={inputStyles}
+      />
+      <button type="submit" style={buttonStyles}>Sign Up</button>
     </form>
   );
 };
 
-export default MyAccount;
+export default SignUp;

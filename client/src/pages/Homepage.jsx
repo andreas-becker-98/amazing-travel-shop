@@ -16,19 +16,13 @@ const HomePage = () => {
 
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev === 4 ? 1 : prev + 1));
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div>
-       {user ? (
-        <p>Welcome, {user.username}!</p>
-      ) : (
-        <p>Loading...</p>
-      )}
-      
       <div className="carousel w-full">
         <div
           id="slide1"
