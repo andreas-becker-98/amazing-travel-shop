@@ -24,7 +24,7 @@
 
 .navbar-center .nav-links li {
   margin-right: 2rem;
-  position: relative; /* Ensure the dropdown is positioned correctly */
+  position: relative; 
 }
 
 .navbar-center .nav-links a {

@@ -1,9 +1,19 @@
 import React, { useEffect, useState } from "react";
 
-const Homepage = () => {
+const HomePage = () => {
+  const [user, setUser] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(1);
 
   useEffect(() => {
+
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+    if (storedUser) {
+      setUser(storedUser);
+    } else {
+
+      window.location.href = "/login";
+    }
+
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev === 4 ? 1 : prev + 1));
     }, 3000);
@@ -13,6 +23,12 @@ const Homepage = () => {
 
   return (
     <div>
+       {user ? (
+        <p>Welcome, {user.username}!</p>
+      ) : (
+        <p>Loading...</p>
+      )}
+      
       <div className="carousel w-full">
         <div
           id="slide1"
@@ -67,4 +83,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default HomePage;

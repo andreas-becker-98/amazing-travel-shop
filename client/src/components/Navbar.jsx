@@ -18,21 +18,28 @@ const Navbar = () => {
       </div>
       <div className="navbar-center">
         <ul className="nav-links">
+          {/* Men's Dropdown */}
           <li className="dropdown">
-            <Link to="/menpage">Men's ▼</Link>
+            <Link to="/menpage">Men's</Link>
             <div className="dropdown-content">
-              <Link to="/jackets">Jackets</Link>
-              <Link to="/backpacks">Backpacks</Link>
+              <Link to="/jackets/men">Jackets</Link> {/* Correct path for men's jackets */}
+              <Link to="/backpacks/men">Backpacks</Link> {/* Correct path for men's backpacks */}
+              <Link to="/trailVests/men">Trail Vests</Link>
             </div>
           </li>
-          <li>
+
+          {/* Women's Dropdown */}
+          <li className="dropdown">
             <Link to="/womenpage">Women's</Link>
-          </li>
-          <li>
-            <Link to="/accessories">Accessories</Link>
+            <div className="dropdown-content">
+              <Link to="/jackets/women">Jackets</Link> {/* Correct path for women's jackets */}
+              <Link to="/backpacks/women">Backpacks</Link> 
+              <Link to="/trailVests/women">Trail Vests</Link> {/* Correct path for women's backpacks */}
+            </div>
           </li>
         </ul>
       </div>
+
       <div className="navbar-right">
         {/* User Icon */}
         <Link to="/myaccount" className="user-icon">

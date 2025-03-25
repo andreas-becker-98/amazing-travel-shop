@@ -1,3 +1,4 @@
+/* Reset default styles */
 * {
   margin: 0;
   padding: 0;
@@ -17,6 +18,15 @@ body {
   color: #333;
 }
 
+
+.product-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+  flex-wrap: wrap; 
+  margin: 10px auto;
+}
+
 /* Product Card */
 .product-card {
   width: 340px;
@@ -32,16 +42,10 @@ body {
   align-items: flex-start;
 }
 
-.product-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  justify-content: center;
-}
 .product-card.product-card-view {
   height: 510px;
 }
+
 .product-card h2 {
   margin-bottom: 15px;
   font-size: 1.4em;
@@ -73,46 +77,75 @@ body {
   background-color: #0d8ddb;
 }
 
-/* Basket Page */
-.cart-item {
-  border: 1px solid #ddd;
+.product-image {
+  margin-left: 20px;
+  border-radius: 5%;
+  border: 2px solid black;
+  width: 260px;
+  height: 250px;
+}
+
+.review-section {
+  width: 50%; 
+  height: 530px;
+  padding: 20px;
+  background-color: whitesmoke;
   border-radius: 8px;
+  border: 2px solid black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.review-section h3 {
+  margin-bottom: 15px;
+  font-size: 1.4em;
+  color: black;
+  text-align: center;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  margin-bottom: 10px;
   padding: 10px;
-  margin: 10px 0;
-  background-color: #ffffff;
-}
-
-.cart-item h3 {
-  font-size: 1.1em;
-  margin-bottom: 5px;
-}
-
-.cart-item p {
-  color: #666;
-  margin: 5px 0;
-}
-
-.cart-item input[type="number"] {
-  width: 50px;
-  margin-left: 10px;
-  padding: 5px;
-  font-size: 1em;
-  border: 1px solid #ccc;
+  border: 2px solid black;
   border-radius: 4px;
 }
 
-/* Total */
-.cart-total {
-  font-size: 1.3em;
-  font-weight: bold;
-  margin-top: 20px;
-  text-align: right;
+form textarea {
+  height: 220px;
 }
 
-.product-image {
-  margin-left: 30px;
-  border-radius: 5%;
-  border: 2px solid black;
-  width: 250px;
-  height: 250px;
+form button {
+  padding: 10px;
+  background-color: #1da1f2;
+  color: black;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .product-container {
+    flex-direction: column; 
+    gap: 10px; 
+  }
+
+  .review-section {
+    width: 90%; 
+    margin-left: 20px;
+    padding: 30px; 
+    margin-bottom: 30px;
+  }
+
+  .product-card {
+    width: 90%; 
+  }
+  .product-image {
+    margin-left: 70px;
+  }
 }
