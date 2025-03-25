@@ -1,35 +1,59 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+} from "react-router-dom";
+import { CartProvider } from "./contexts/CartContext";
+import Product from "./pages/Product";
+import Cart from "./pages/Cart";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Homepage from "./pages/Homepage";
+import Menpage from "./pages/Menpage";
+import Womenpage from "./pages/Womenpage";
+import Backpacks from "./categories/Backpacks";
+import Jackets from "./categories/Jackets"; 
+import TrailVests from "./categories/TrailVests";
+import MyAccount from "./pages/MyAccount";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import "./App.css";
+import { SessionProvider } from "./contexts/SessionContext";
+
+
+const CartSummaryWithVisibility = () => {
+  const location = useLocation();
+
+
+  if (location.pathname === "/" || location.pathname === "/myaccount" || location.pathname === "/login") {
+    return null;
+  }
+
+  return <CartSummary />;
+};
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <SessionProvider>
+    <CartProvider>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/product/:category/:id" element={<Product />} />
+          <Route path="/menpage" element={<Menpage />} /> 
+          <Route path="/womenpage" element={<Womenpage />} />
+          <Route path="/myaccount" element={<MyAccount />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/backpacks/:category" element={<Backpacks />} />
+          <Route path="/jackets/:category" element={<Jackets />} /> 
+          <Route path="/trailVests/:category" element={<TrailVests />} /> 
+        </Routes>
+        <Footer />
+      </Router>
+    </CartProvider>
+    </SessionProvider>
+  );
 }
 
-export default App
+export default App;

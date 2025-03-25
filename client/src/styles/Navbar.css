@@ -1,0 +1,85 @@
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+}
+
+.navbar-left .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-center .nav-links {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-center .nav-links li {
+  margin-right: 2rem;
+  position: relative; 
+}
+
+.navbar-center .nav-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-right .cart-icon,
+.navbar-right .user-icon,
+.navbar-right .fav-icon {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1rem;
+  position: relative;
+}
+
+/* Dropdown Styles */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #444;
+  min-width: 150px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  padding: 12px 16px;
+  display: block;
+  color: white;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #666;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown > a {
+  padding: 0;
+  display: block;
+  background-color: #333;
+  color: white;
+}
