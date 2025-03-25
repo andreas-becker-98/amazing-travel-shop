@@ -4,17 +4,16 @@ import { useCart } from "../contexts/CartContext";
 function Cart() {
   const { cart, updateQuantity, calculateTotal } = useCart();
 
-  // Combine men's and women's cart items
-  const allItems = [...cart.men, ...cart.women];
+  console.log(cart);
 
   return (
     <div>
       <h1>Your Basket</h1>
-      {allItems.length === 0 ? (
+      {cart.length === 0 ? (
         <p>Your basket is empty.</p>
       ) : (
         <div>
-          {allItems.map((item) => (
+          {cart.map((item) => (
             <div key={item.id} className="cart-item">
               <h3>{item.name}</h3>
               <p>Price: £{item.price}</p>
@@ -31,7 +30,7 @@ function Cart() {
             </div>
           ))}
           <h2 className="cart-total">
-            Total: £{(parseFloat(calculateTotal("men")) + parseFloat(calculateTotal("women"))).toFixed(2)}
+            Total: £{calculateTotal()}
           </h2>
         </div>
       )}
