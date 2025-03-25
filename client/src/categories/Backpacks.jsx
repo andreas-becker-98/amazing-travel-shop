@@ -13,10 +13,10 @@ const Jackets = () => {
     let filtered = [];
 
     if (category === "men") {
-      filtered = menProducts.filter((product) => product.category === "jackets");
+      filtered = menProducts.filter((product) => product.category === "backpacks");
       console.log("Filtered Men Products:", filtered);
     } else if (category === "women") {
-      filtered = womenProducts.filter((product) => product.category === "jackets");
+      filtered = womenProducts.filter((product) => product.category === "backpacks");
       console.log("Filtered Women Products:", filtered);
     }
 
@@ -25,10 +25,10 @@ const Jackets = () => {
 
   return (
     <div>
-      <h2>{category === "men" ? "Men's Jackets" : "Women's Jackets"}</h2>
+      <h2>{category === "men" ? "Men's Backpacks" : "Women's Backpacks"}</h2>
       <div className="product-list">
         {filteredProducts.length === 0 ? (
-          <p>No jackets found</p>
+          <p>No Backpacks found</p>
         ) : (
           filteredProducts.map((product) => (
             <div key={product.id} className="product">

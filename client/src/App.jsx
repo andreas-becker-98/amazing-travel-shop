@@ -12,34 +12,47 @@ import Footer from "./components/Footer";
 import Homepage from "./pages/Homepage";
 import Menpage from "./pages/Menpage";
 import Womenpage from "./pages/Womenpage";
-import Accessories from "./pages/Accessories";
+import Backpacks from "./categories/Backpacks";
+import Jackets from "./categories/Jackets"; 
+import TrailVests from "./categories/TrailVests";
 import MyAccount from "./pages/MyAccount";
-import Favourite from "./pages/Favourite";
-import Backpacks from "./categories/Backpack";
-import Jackets from "./categories/Jackets";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "./App.css";
+import { SessionProvider } from "./contexts/SessionContext";
+
+
+const CartSummaryWithVisibility = () => {
+  const location = useLocation();
+
+
+  if (location.pathname === "/" || location.pathname === "/myaccount" || location.pathname === "/login") {
+    return null;
+  }
+
+  return <CartSummary />;
+};
 
 function App() {
   return (
+    <SessionProvider>
     <CartProvider>
       <Router>
         <Header />
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/product/:id" element={<Product />} />
-          <Route path="/menpage" element={<Menpage />} />
-          <Route path="/backpacks" element={<Backpacks />} />
-          <Route path="/jackets" element={<Jackets />} />
+          <Route path="/product/:category/:id" element={<Product />} />
+          <Route path="/menpage" element={<Menpage />} /> 
           <Route path="/womenpage" element={<Womenpage />} />
-          <Route path="/accessories" element={<Accessories />} />
           <Route path="/myaccount" element={<MyAccount />} />
-          <Route path="/Favourite" element={<Favourite />} />
-          <Route path="/Cart" element={<Cart />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/backpacks/:category" element={<Backpacks />} />
+          <Route path="/jackets/:category" element={<Jackets />} /> 
+          <Route path="/trailVests/:category" element={<TrailVests />} /> 
         </Routes>
         <Footer />
       </Router>
     </CartProvider>
+    </SessionProvider>
   );
 }
 

@@ -1,19 +1,17 @@
-import { products } from "../data";
 import React from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../contexts/CartContext";
-
+import { menProducts } from "../data/MenProducts"; 
 function MenPage() {
-  // TODO: what does this function do?
   const { addToCart } = useCart();
 
   return (
     <div>
       <div className="product-container">
-        {products.map((product) => (
+        {menProducts.map((product) => (
           <div key={product.id} className="product-card">
             <h2>{product.name}</h2>
-            <Link to={`/product/${product.id}`}>
+            <Link to={`/product/men/${product.id}`}>
               <img
                 src={product.imageUrl}
                 alt={product.name}
