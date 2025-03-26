@@ -60,7 +60,7 @@ app.get('/for/:audience', async (req, res) => {
     const data = [];
     const products = await Product.findAll({
         where: {
-            audience: req.params.audience,
+            type: req.params.audience,
         },
         include: [
             {
