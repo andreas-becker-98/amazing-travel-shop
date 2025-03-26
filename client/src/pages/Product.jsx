@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { useCart } from "../contexts/CartContext";
 import ReviewForm from "../components/ReviewForm";
@@ -19,8 +19,8 @@ function Product() {
         const response = await api.get(`/api/products/${id}`);
         console.log(response);
         setProduct(response.data);
-      } catch (error) {
-        console.error(`Failed to fetch product with id ${id}`, error);
+      } catch {
+        console.error(`Failed to fetch product with id ${id}`);
       }
     };
 
