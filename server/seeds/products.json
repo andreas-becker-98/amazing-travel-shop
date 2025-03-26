@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "price_gbp": 10.0,
+        "picture_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR65hzDxE552SPF20SSlXCBlPjOfVK2eQzeOg&s",
+        "category_id": 1,
+        "type": "m"
+    },
+    {
+        "id": 2,
+        "price_gbp": 15.0,
+        "picture_url": "https://res.cloudinary.com/ekoweb/image/upload/s--G5aw5T65--/f_auto,h_260,q_auto:eco,w_260/v1/products/9-132085/views/9-132085__86621-208_01",
+        "category_id": 1,
+        "type": "m"
+    },
+    {
+        "id": 3,
+        "price_gbp": 20.0,
+        "picture_url": "https://res.cloudinary.com/ekoweb/image/upload/s--qT17Xv8t--/f_auto,h_260,q_auto:eco,w_260/v1/products/9-170894/views/9-170894__lc2462200_01",
+        "category_id": 2,
+        "type": "m"
+    },
+    {
+        "id": 4,
+        "price_gbp": 25.0,
+        "picture_url": "https://cdn.shopify.com/s/files/1/2622/3862/products/sv2_trail_back_2000x.jpg?v=1613240729",
+        "category_id": 2,
+        "type": "m"
+    },
+    {
+        "id": 5,
+        "price_gbp": 30.0,
+        "picture_url": "https://contents.mediadecathlon.com/p1723866/2000x2000/sq/mens_trekking_travel_backpack_50_litres_travel_500_-_grey_forclaz_8383140_1723866.jpg?k=64acd84499bcb577fba9e29f34983086",
+        "category_id": 3,
+        "type": "m"
+    },
+    {
+        "id": 6,
+        "price_gbp": 35.0,
+        "picture_url": "https://content.backcountry.com/images/items/900/PAT/PAT023B/GLAGN.jpg",
+        "category_id": 3,
+        "type": "m"
+    }
+]

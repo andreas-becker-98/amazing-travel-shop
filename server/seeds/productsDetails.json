@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "lang": "en",
+        "name": "Neon WaterProof Jacket",
+        "description": "This a great product for rainy weather!",
+        "product_id": 1
+    },
+    {
+        "id": 2,
+        "lang": "en",
+        "name": "Orange Jacket",
+        "description": "An amazing product for cold weather.",
+        "product_id": 2
+    },
+    {
+        "id": 3,
+        "lang": "en",
+        "name": "Light Blue Trail Vest",
+        "description": "Perfect for running!",
+        "product_id": 3
+    },
+    {
+        "id": 4,
+        "lang": "en",
+        "name": "Sporty Trail Vest",
+        "description": "Perfect for running!",
+        "product_id": 4
+    },
+    {
+        "id": 5,
+        "lang": "en",
+        "name": "Grey Brown Travel Backpack",
+        "description": "Perfect for hiking!",
+        "product_id": 5
+    },
+    {
+        "id": 6,
+        "lang": "en",
+        "name": "Green Travel Backpack",
+        "description": "Perfect for hiking!",
+        "product_id": 6
+    }
+]
