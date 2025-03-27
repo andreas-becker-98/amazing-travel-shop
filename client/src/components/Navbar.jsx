@@ -65,9 +65,15 @@ const Navbar = () => {
         </Link>
 
         {/* Favourite Icon */}
-        <Link to="/favourite" className="fav-icon">
-          <FontAwesomeIcon icon={faHeart} />
-        </Link>
+        {
+          /*
+          Currently not used
+
+            <Link to="/favourite" className="fav-icon">
+              <FontAwesomeIcon icon={faHeart} />
+            </Link>
+          */
+        }
 
         {/* Cart Icon */}
         <Link to="/cart" className="cart-icon">
