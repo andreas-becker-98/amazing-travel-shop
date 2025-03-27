@@ -4,11 +4,15 @@ import "../styles/Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCartShopping,
-  faHeart,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
+import { useCart } from "../contexts/CartContext";
+import "../styles/CartCount.css";
 
 const Navbar = () => {
+  const { CartItemCount } = useCart(); // Use the correct function name
+  const cartItemCount = CartItemCount(); // Call the function to get the count
+  
   return (
     <nav className="navbar">
       <div className="navbar-left">
@@ -78,6 +82,9 @@ const Navbar = () => {
         {/* Cart Icon */}
         <Link to="/cart" className="cart-icon">
           <FontAwesomeIcon icon={faCartShopping} />
+          {cartItemCount > 0 && (
+            <span className="cart-count">{cartItemCount}</span> 
+          )}
         </Link>
       </div>
     </nav>
