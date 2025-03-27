@@ -15,8 +15,8 @@ function Cart() {
         <div>
           {cart.map((item) => (
             <div key={item.id} className="cart-item">
-              <h3>{item.name}</h3>
-              <p>Price: £{item.price}</p>
+              <h3>{item.details[0].name}</h3>
+              <p>Price: £{item.price["gbp"]}</p>
               <label>
                 Quantity:
                 <input
