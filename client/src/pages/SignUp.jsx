@@ -1,37 +1,36 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "../mock/api"; 
+import api from "../api";
 import { useSession } from "../contexts/SessionContext";
+import { jwtDecode } from "jwt-decode";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
-  const { setUser } = useSession();
+  const { setUser, setToken } = useSession();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-   
     if (password !== confirmPassword) {
       alert("Passwords do not match");
       return;
     }
 
     try {
-      const response = await axios.post('/api/signup', { email, password });
-      const data = response.data;
-      console.log(data)
+      const response = await api.post('/api/signup', { email, password });
+      const token = response.data.token;
+      
+      const data = jwtDecode(token).data;
       
       setUser({
-        username: data.username,
+        username: data.name,
+        email: data.email,
         id: data.id,
       });
-      localStorage.setItem('user', JSON.stringify(data));
-      localStorage.setItem('authToken', data.token);
-
-     
+      setToken(token);
       navigate('/');
     } catch (error) {
       console.error('Signup failed', error);

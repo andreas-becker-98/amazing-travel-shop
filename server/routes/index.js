@@ -10,7 +10,7 @@ router.get("/api", (_, res) => {
     res.json({ message: "Welcome to the API" });
 });
 
-router.get("/api/auth", async (req, res) => {
+router.post("/api/auth", async (req, res) => {
     if(!req.body.email || !req.body.password) {
         res.sendStatus(400);
         return;
@@ -37,7 +37,7 @@ router.get("/api/auth", async (req, res) => {
     res.json({token: signToken(userData.dataValues) });
 });
 
-router.post("/api/auth", async (req, res) => {
+router.post("/api/signup", async (req, res) => {
     if(!req.body.email || !req.body.password) {
         res.sendStatus(400);
         return;

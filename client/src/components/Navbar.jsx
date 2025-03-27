@@ -26,9 +26,18 @@ const Navbar = () => {
           <li className="dropdown">
             <Link to="/menpage">Men's</Link>
             <div className="dropdown-content">
-              <Link to="/jackets/men">Jackets</Link> {/* Correct path for men's jackets */}
-              <Link to="/backpacks/men">Backpacks</Link> {/* Correct path for men's backpacks */}
-              <Link to="/trailVests/men">Trail Vests</Link>
+              <Link to={{
+                pathname: "/menpage",
+                search: "?category=Jackets"
+              }}>Jackets</Link>
+              <Link to={{
+                pathname: "/menpage",
+                search: "?category=Backpacks"
+              }}>Backpacks</Link>
+              <Link to={{
+                pathname: "/menpage",
+                search: "?category=Trail+Vests"
+              }}>Trail Vests</Link>
             </div>
           </li>
 
@@ -36,9 +45,18 @@ const Navbar = () => {
           <li className="dropdown">
             <Link to="/womenpage">Women's</Link>
             <div className="dropdown-content">
-              <Link to="/jackets/women">Jackets</Link> {/* Correct path for women's jackets */}
-              <Link to="/backpacks/women">Backpacks</Link>
-              <Link to="/trailVests/women">Trail Vests</Link> {/* Correct path for women's backpacks */}
+              <Link to={{
+                pathname: "/womenpage",
+                search: "?category=Jackets"
+              }}>Jackets</Link>
+              <Link to={{
+                pathname: "/womenpage",
+                search: "?category=Backpacks"
+              }}>Backpacks</Link>
+              <Link to={{
+                pathname: "/womenpage",
+                search: "?category=Trail+Vests"
+              }}>Trail Vests</Link>
             </div>
           </li>
         </ul>
@@ -49,6 +67,17 @@ const Navbar = () => {
         <Link to="/myaccount" className="user-icon">
           <FontAwesomeIcon icon={faUser} />
         </Link>
+
+        {/* Favourite Icon */}
+        {
+          /*
+          Currently not used
+
+            <Link to="/favourite" className="fav-icon">
+              <FontAwesomeIcon icon={faHeart} />
+            </Link>
+          */
+        }
 
         {/* Cart Icon */}
         <Link to="/cart" className="cart-icon">

@@ -40,7 +40,7 @@ export function CartProvider({ children }) {
 
   const calculateTotal = () => {
     return cart
-      .reduce((total, item) => total + item.price * item.quantity, 0)
+      .reduce((total, item) => total + item.price["gbp"] * item.quantity, 0)
       .toFixed(2);
   };
 

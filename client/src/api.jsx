@@ -16,7 +16,7 @@ apiAxios.interceptors.request.use((config) => {
 });
 
 const shouldUseMock = import.meta.env.REACT_APP_USE_MOCK_API === "true";
-const api = shouldUseMock ? mockAxios :apiAxios;
+const api = shouldUseMock ? mockAxios : apiAxios;
 
 
 export default api;

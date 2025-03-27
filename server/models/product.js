@@ -20,6 +20,9 @@ Product.init(
         },
         picture_url: {
             type: DataTypes.STRING,
+        },
+        type: {
+            type: DataTypes.STRING(1),
         }
     },
     {
