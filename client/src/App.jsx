@@ -11,7 +11,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Homepage from "./pages/Homepage";
 import MyAccount from "./pages/MyAccount";
-import SignUp from "./pages/Signup";
+import SignUp from "./pages/SignUp";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "./App.css";
 import { SessionProvider } from "./contexts/SessionContext";

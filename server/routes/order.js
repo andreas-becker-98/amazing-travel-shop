@@ -78,4 +78,37 @@ app.get('/:id', authMiddleware, async (req, res) => {
     res.json(data);
 });
 
+app.post('/create/', authMiddleware, async (req, res) => {
+    //req.user.id
+    const cart = req.body;
+    
+    
+    const order = await Order.create({
+
+    });
+    const orderItems = ...Order;
+
+    const data = [];
+
+    const orders = await Order.findAll({
+        where: {
+            user_id: ,
+        },
+        include: [
+            {
+                model: OrderItem
+            },
+            {
+                model: Product
+            },
+        ]
+    });
+
+    if(orders) {
+        data.push(...orders.map(orderToPayload));
+    }
+
+    res.json(data);
+});
+
 module.exports = app;

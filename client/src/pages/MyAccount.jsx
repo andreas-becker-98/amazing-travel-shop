@@ -12,21 +12,20 @@ const MyAccount = () => {
   const [email, setEmail] = useState(defaultUser.email);
   const [password, setPassword] = useState(defaultUser.password);
   const navigate = useNavigate();
-  const { setUser } = useSession(); 
+  const { setUser, setToken } = useSession(); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/login', { email, password });
+      const response = await axios.post('/api/auth', { email, password });
       const data = response.data;
-
-      localStorage.setItem('user', JSON.stringify(data)); 
-      localStorage.setItem('authToken', data.token); 
 
       setUser({
         username: data.username,
         id: data.id,
       });
+
+      setToken(data.token);
 
       navigate('/');
     } catch (error) {

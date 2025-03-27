@@ -20,39 +20,39 @@ const Navbar = () => {
         <ul className="nav-links">
           {/* Men's Dropdown */}
           <li className="dropdown">
-            <Link to="/menpage" reloadDocument>Men's</Link>
+            <Link to="/menpage">Men's</Link>
             <div className="dropdown-content">
               <Link to={{
                 pathname: "/menpage",
                 search: "?category=Jackets"
-              }} reloadDocument>Jackets</Link>
+              }}>Jackets</Link>
               <Link to={{
                 pathname: "/menpage",
                 search: "?category=Backpacks"
-              }} reloadDocument>Backpacks</Link>
+              }}>Backpacks</Link>
               <Link to={{
                 pathname: "/menpage",
                 search: "?category=Trail+Vests"
-              }} reloadDocument>Trail Vests</Link>
+              }}>Trail Vests</Link>
             </div>
           </li>
 
           {/* Women's Dropdown */}
           <li className="dropdown">
-            <Link to="/womenpage" reloadDocument>Women's</Link>
+            <Link to="/womenpage">Women's</Link>
             <div className="dropdown-content">
               <Link to={{
                 pathname: "/womenpage",
                 search: "?category=Jackets"
-              }} reloadDocument>Jackets</Link>
+              }}>Jackets</Link>
               <Link to={{
                 pathname: "/womenpage",
                 search: "?category=Backpacks"
-              }} reloadDocument>Backpacks</Link>
+              }}>Backpacks</Link>
               <Link to={{
                 pathname: "/womenpage",
                 search: "?category=Trail+Vests"
-              }} reloadDocument>Trail Vests</Link>
+              }}>Trail Vests</Link>
             </div>
           </li>
         </ul>

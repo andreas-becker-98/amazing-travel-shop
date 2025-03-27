@@ -27,7 +27,7 @@ function ProductList({type, longType}) {
     };
 
     fetchProducts();
-  }, []);
+  }, [category, type]);
 
   return (
     <div>
