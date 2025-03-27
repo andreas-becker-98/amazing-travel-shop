@@ -40,7 +40,7 @@ const MyAccount = () => {
     flexDirection: 'column',
     alignItems: 'center',
     maxWidth: '400px',
-    height: '280px',
+    height: '320px',
     margin: '50px auto',
     padding: '20px',
     borderRadius: '8px',
@@ -64,7 +64,7 @@ const MyAccount = () => {
     border: '2px solid black',
     borderRadius: '4px',
     cursor: 'pointer',
-    marginBottom: '10px',  // Space between buttons
+    marginBottom: '25px',  // Space between buttons
   };
 
   const signUpButtonStyles = {

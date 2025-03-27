@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../contexts/CartContext";
-import { womenProducts } from "../data/WomenProducts"; // Import women's products
+import { womenProducts } from "../data/WomenProducts"; 
 
 function WomenPage() {
   const { addToCart } = useCart();

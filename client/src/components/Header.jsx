@@ -24,7 +24,6 @@ const Header = () => {
   return (
     <div>
       <Navbar />  
-      
       {token && user ? (  
         <div>
           <p>Welcome, {wordCase(user.username)}!</p>

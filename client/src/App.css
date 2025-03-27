@@ -18,28 +18,29 @@ body {
   color: #333;
 }
 
-
 .product-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between; 
-  flex-wrap: wrap; 
-  margin: 10px auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex; /* Ensures the items are displayed in a row */
+  flex-wrap: wrap; /* Makes sure the items wrap into the next row when necessary */
+  gap: 20px; /* Spacing between product cards */
+  justify-content: space-between; /* Distribute space evenly between the items */
 }
 
 /* Product Card */
 .product-card {
-  width: 340px;
-  height: 440px;
-  border: 2px solid black;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 20px;
   background-color: whitesmoke;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: calc(50% - 25px); /* Three items per row, considering gap of 20px */
+  margin-bottom: 20px;
+  padding: 20px;
+  text-align: center;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: column; /* Align items vertically */
+  justify-content: space-between; /* Space between items */
+  height: 500px;
 }
 
 .product-card.product-card-view {
@@ -61,16 +62,13 @@ body {
 }
 
 .product-card button {
-  padding: 8px 16px;
+  background-color: #007BFF;
+  color: white;
   border: none;
-  background-color: #1da1f2;
-  color: black;
-  font-size: 1em;
-  font-weight: bold;
-  cursor: pointer;
+  padding: 10px 20px;
   border-radius: 5px;
-  margin: 0;
-  align-self: center;
+  cursor: pointer;
+  margin-top: 20px; /* Ensures the button is at the bottom */
 }
 
 .product-card button:hover {
@@ -78,16 +76,18 @@ body {
 }
 
 .product-image {
-  margin-left: 20px;
+  margin: auto;
   border-radius: 5%;
   border: 2px solid black;
-  width: 260px;
+  width: 240px;
   height: 250px;
+  
+ 
 }
 
 .review-section {
-  width: 50%; 
-  height: 530px;
+  width: 50%;
+  height: 510px;
   padding: 20px;
   background-color: whitesmoke;
   border-radius: 8px;
@@ -95,6 +95,8 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .review-section h3 {
@@ -111,10 +113,14 @@ form textarea {
   padding: 10px;
   border: 2px solid black;
   border-radius: 4px;
+  box-sizing: border-box;
 }
 
 form textarea {
   height: 220px;
+  resize: vertical; /* Allow the user to resize the textarea vertically */
+  overflow-y: auto; /* Add scrollbar if the content overflows */
+  box-sizing: border-box;
 }
 
 form button {
@@ -131,21 +137,27 @@ form button {
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .product-container {
-    flex-direction: column; 
-    gap: 10px; 
+    flex-direction: column; /* Stack the items in a column on smaller screens */
+    gap: 10px; /* Reduce the gap between items */
   }
 
   .review-section {
-    width: 90%; 
-    margin-left: 20px;
-    padding: 30px; 
+    width: 90%; /* Adjust review section to fit smaller screens */
+    margin-left: 0;
+    padding: 30px;
     margin-bottom: 30px;
   }
 
   .product-card {
-    width: 90%; 
+    width: 90%; /* Make product cards take more width on smaller screens */
   }
   .product-image {
     margin-left: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-card {
+    width: 100%; /* One product card per row on very small screens */
   }
 }

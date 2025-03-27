@@ -13,7 +13,6 @@ function Product() {
 
   let product = null;
 
-  // Find the product based on the category and productId
   if (category === "men") {
     product = menProducts.find((p) => p.id === productId);
   } else if (category === "women") {
@@ -22,7 +21,6 @@ function Product() {
 
   const { addToCart } = useCart();
 
-  // Handle if no product is found
   if (!product) {
     return <p>Product not found</p>;
   }

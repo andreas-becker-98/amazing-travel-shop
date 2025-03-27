@@ -20,6 +20,11 @@ export function CartProvider({ children }) {
     });
   };
 
+  //Calculate total number of items in the cart 
+  const CartItemCount = () => {
+    return cart.reduce((total, item) => total + item.quantity, 0);
+  };
+
   // Update the quantity of an item in the cart for the respective category
   const updateQuantity = (id, quantity) => {
     setCart((prevBasket) =>
@@ -41,7 +46,7 @@ export function CartProvider({ children }) {
 
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, updateQuantity, calculateTotal, clearCart }}
+      value={{ cart, addToCart, updateQuantity, calculateTotal, clearCart, CartItemCount }}
     >
       {children}
     </CartContext.Provider>
