@@ -1,19 +1,26 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { useCart } from "../contexts/CartContext";
 import api from '../api';
 
 
 function ProductList({type, longType}) {
   const [products, setProducts] = useState([]);
+  const [searchParams, _] = useSearchParams();
   const { addToCart } = useCart();
+
+  const category = searchParams.get("category");
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const response = await api.get(`/api/products/for/${type}`);
         console.log(response);
-        setProducts(response.data);
+        setProducts(response.data.filter((item) => {
+            if(!category) return true;
+
+            return item.category.name === category;
+        }));
       } catch {
         console.error(`Failed to fetch product with type "${type}" (${longType})`);
       }
