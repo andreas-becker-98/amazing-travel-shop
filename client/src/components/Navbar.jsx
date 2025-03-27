@@ -20,7 +20,7 @@ const Navbar = () => {
         <ul className="nav-links">
           {/* Men's Dropdown */}
           <li className="dropdown">
-            <Link to="/menpage">Men's</Link>
+            <Link to="/menpage" reloadDocument>Men's</Link>
             <div className="dropdown-content">
               <Link to={{
                 pathname: "/menpage",
@@ -39,7 +39,7 @@ const Navbar = () => {
 
           {/* Women's Dropdown */}
           <li className="dropdown">
-            <Link to="/womenpage">Women's</Link>
+            <Link to="/womenpage" reloadDocument>Women's</Link>
             <div className="dropdown-content">
               <Link to={{
                 pathname: "/womenpage",
