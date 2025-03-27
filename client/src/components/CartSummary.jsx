@@ -10,9 +10,9 @@ const CartSummary = () => {
   const totalPrice = calculateTotal();
 
   return (
-    <div>
+    <>
       {totalItems} item(s) in your cart: £{totalPrice}
-    </div>
+    </>
   );
 };
 
