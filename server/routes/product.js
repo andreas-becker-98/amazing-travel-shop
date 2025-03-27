@@ -52,7 +52,7 @@ app.get('/:id', async (req, res) => {
 });
 
 app.get('/for/:audience', async (req, res) => {
-    if(!["m", "f", "u"].includes(req.params.audience)) {
+    if(!["m", "w", "u"].includes(req.params.audience)) {
         res.sendStatus(404);
         return;
     }

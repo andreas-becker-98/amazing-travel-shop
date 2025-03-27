@@ -40,5 +40,47 @@
         "name": "Green Travel Backpack",
         "description": "Perfect for hiking!",
         "product_id": 6
+    },
+    {
+        "id": 7,
+        "lang": "en",
+        "name": "Bela Blue Jacket",
+        "description": "Smart Waterproof jacket, perfect for all weather!",
+        "product_id": 7
+    },
+    {
+        "id": 8,
+        "lang": "en",
+        "name": "Purple Jacket",
+        "description": "Smart Waterproof jacket, perfect for all weather!",
+        "product_id": 8
+    },
+    {
+        "id": 9,
+        "lang": "en",
+        "name": "Purple Trail Vest",
+        "description": "Perfect for running!",
+        "product_id": 9
+    },
+    {
+        "id": 10,
+        "lang": "en",
+        "name": "Black Trail Vest",
+        "description": "Perfect for running!",
+        "product_id": 10
+    },
+    {
+        "id": 11,
+        "lang": "en",
+        "name": "Purple Backpack",
+        "description": "Perfect for hiking!",
+        "product_id": 11
+    },
+    {
+        "id": 12,
+        "lang": "en",
+        "name": "Black Backpack",
+        "description": "Perfect for hiking!",
+        "product_id": 12
     }
 ]

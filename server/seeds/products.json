@@ -40,5 +40,47 @@
         "picture_url": "https://content.backcountry.com/images/items/900/PAT/PAT023B/GLAGN.jpg",
         "category_id": 3,
         "type": "m"
+    },
+    {
+        "id": 7,
+        "price_gbp": 50.0,
+        "picture_url": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQisUuEM31Ny5bdctcQe7H2bZyoSJ0vRuTd_AQemTSm5p6B2K_Q6XxpfojiHmLAHmt_hYf6zxdrY9nc3UKq2eoe8K1CFM8ldqIHLBVL0o2P8vHL3YQnpfNYcoLFSilQRBJm&usqp=CAc",
+        "category_id": 1,
+        "type": "w"
+    },
+    {
+        "id": 8,
+        "price_gbp": 50.0,
+        "picture_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq7eAtYb1fJDCctFGxYEbvuuH-AyKFGrrOdQ&s",
+        "category_id": 1,
+        "type": "w"
+    },
+    {
+        "id": 9,
+        "price_gbp": 50.0,
+        "picture_url": "https://www.knives-online.com.au/assets/alt_3/CO1463.jpg?20210309031119",
+        "category_id": 2,
+        "type": "w"
+    },
+    {
+        "id": 10,
+        "price_gbp": 50.0,
+        "picture_url": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/04ec7f0363074048830aaefa01035eba_9366/HS6020_01_standard.jpg",
+        "category_id": 2,
+        "type": "w"
+    },
+    {
+        "id": 11,
+        "price_gbp": 50.0,
+        "picture_url": "https://www.consortium.co.uk/media/catalog/product/cache/1/image/040ec09b1e35df139433887a97daa66f/t/h/the-north-face-borealis-classic-backpack-_tillandsia-purpletnf-black_1.jpg",
+        "category_id": 3,
+        "type": "w"
+    },
+    {
+        "id": 12,
+        "price_gbp": 50.0,
+        "picture_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTULt9DIMDB2L5BqmtoCK74eqnFt_7-RZtc_A&s",
+        "category_id": 3,
+        "type": "w"
     }
 ]
