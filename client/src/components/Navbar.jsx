@@ -20,21 +20,39 @@ const Navbar = () => {
         <ul className="nav-links">
           {/* Men's Dropdown */}
           <li className="dropdown">
-            <Link to="/menpage">Men's</Link>
+            <Link to="/menpage" reloadDocument>Men's</Link>
             <div className="dropdown-content">
-              <Link to="/jackets/men">Jackets</Link> {/* Correct path for men's jackets */}
-              <Link to="/backpacks/men">Backpacks</Link> {/* Correct path for men's backpacks */}
-              <Link to="/trailVests/men">Trail Vests</Link>
+              <Link to={{
+                pathname: "/menpage",
+                search: "?category=Jackets"
+              }} reloadDocument>Jackets</Link>
+              <Link to={{
+                pathname: "/menpage",
+                search: "?category=Backpacks"
+              }} reloadDocument>Backpacks</Link>
+              <Link to={{
+                pathname: "/menpage",
+                search: "?category=Trail+Vests"
+              }} reloadDocument>Trail Vests</Link>
             </div>
           </li>
 
           {/* Women's Dropdown */}
           <li className="dropdown">
-            <Link to="/womenpage">Women's</Link>
+            <Link to="/womenpage" reloadDocument>Women's</Link>
             <div className="dropdown-content">
-              <Link to="/jackets/women">Jackets</Link> {/* Correct path for women's jackets */}
-              <Link to="/backpacks/women">Backpacks</Link> 
-              <Link to="/trailVests/women">Trail Vests</Link> {/* Correct path for women's backpacks */}
+              <Link to={{
+                pathname: "/womenpage",
+                search: "?category=Jackets"
+              }} reloadDocument>Jackets</Link>
+              <Link to={{
+                pathname: "/womenpage",
+                search: "?category=Backpacks"
+              }} reloadDocument>Backpacks</Link>
+              <Link to={{
+                pathname: "/womenpage",
+                search: "?category=Trail+Vests"
+              }} reloadDocument>Trail Vests</Link>
             </div>
           </li>
         </ul>
@@ -47,9 +65,15 @@ const Navbar = () => {
         </Link>
 
         {/* Favourite Icon */}
-        <Link to="/favourite" className="fav-icon">
-          <FontAwesomeIcon icon={faHeart} />
-        </Link>
+        {
+          /*
+          Currently not used
+
+            <Link to="/favourite" className="fav-icon">
+              <FontAwesomeIcon icon={faHeart} />
+            </Link>
+          */
+        }
 
         {/* Cart Icon */}
         <Link to="/cart" className="cart-icon">

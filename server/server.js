@@ -1,6 +1,7 @@
 // Require modules & functions
 const express = require('express');
 const sequelize = require('./config/connection');
+const cors = require("cors");
 
 // Configuration Data
 const PORT = process.env.PORT || 3001;
@@ -8,6 +9,8 @@ const PORT = process.env.PORT || 3001;
 // Set up server
 const app = express();
 app.use(express.json());
+
+app.use(cors());
 
 // Include routes
 const routes = require('./routes');

@@ -51,6 +51,33 @@ app.get('/:id', async (req, res) => {
     res.json(data);
 });
 
+app.get('/for/:audience', async (req, res) => {
+    if(!["m", "w", "u"].includes(req.params.audience)) {
+        res.sendStatus(404);
+        return;
+    }
+
+    const data = [];
+    const products = await Product.findAll({
+        where: {
+            type: req.params.audience,
+        },
+        include: [
+            {
+                model: Category
+            },
+            {
+                model: ProductDetails
+            }
+        ],
+    });
+
+    if(products)
+        data.push(...products.map(productToPayload));
+
+    res.json(data);
+});
+
 
 
 
